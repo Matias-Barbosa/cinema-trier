@@ -28,16 +28,9 @@ public class StringUtils {
 
     public static String getRandomMovie() {
         List<String> lista = new ArrayList<>();
-        lista.add("Dramin");
-        lista.add("Nivea For Man");
-        lista.add("Eno");
-        lista.add("Rivotril");
-        lista.add("Valium");
-        lista.add("Dipirona");
-        lista.add("Ibulprofeno");
-        lista.add("Paracetamol");
-        lista.add("Gardenal");
-        lista.add("Benegripe");
+        lista.add("");
+        lista.add("");
+        lista.add("");
         var rd = new SplittableRandom();
         return lista.get(rd.nextInt(0, lista.size()));
     }
@@ -45,16 +38,9 @@ public class StringUtils {
     public static List<String> getMovieList() {
         List<String> listaRetorno = new ArrayList<>();
         List<String> lista = new ArrayList<>();
-        lista.add("Dramin");
-        lista.add("Nivea For Man");
-        lista.add("Eno");
-        lista.add("Rivotril");
-        lista.add("Valium");
-        lista.add("Dipirona");
-        lista.add("Ibulprofeno");
-        lista.add("Paracetamol");
-        lista.add("Gardenal");
-        lista.add("Benegripe");
+        lista.add("");
+        lista.add("");
+        lista.add("");
         var rd = new SplittableRandom();
 
         for (int i = 0; i < rd.nextInt(2, lista.size()); i++) {
