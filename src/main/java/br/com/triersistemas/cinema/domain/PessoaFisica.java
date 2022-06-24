@@ -13,9 +13,8 @@ public abstract class PessoaFisica extends Pessoa {
         this.cpf = this.geraCpf(super.geraDocumento(9));
     }
 
-    protected PessoaFisica(final String nome, final LocalDate aniver, final String cpf) {
+    protected PessoaFisica(final String nome, final LocalDate aniver) {
         super(nome, aniver);
-        this.cpf = StringUtils.extractNumbers(cpf);
     }
 
     public PessoaFisica editar(final String nome, final LocalDate aniver, final String cpf) {

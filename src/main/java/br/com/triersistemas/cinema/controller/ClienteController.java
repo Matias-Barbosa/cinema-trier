@@ -26,11 +26,6 @@ public class ClienteController {
         return clienteService.cadastrar(model);
     }
 
-    @PutMapping("/alterar/{id}")
-    public Cliente alterar(@PathVariable UUID id, @RequestBody ClienteModel model) {
-        return clienteService.alterar(id, model);
-    }
-
     @DeleteMapping("/remover/{id}")
     public Cliente remover(@PathVariable UUID id) {
         return clienteService.remover(id);

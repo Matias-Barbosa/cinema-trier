@@ -9,6 +9,4 @@ public class ClienteModel {
 
     private String nome;
     private LocalDate aniver;
-    private String cpf;
-    private String email;
 }

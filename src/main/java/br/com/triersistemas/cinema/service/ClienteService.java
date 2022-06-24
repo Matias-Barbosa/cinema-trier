@@ -14,7 +14,5 @@ public interface ClienteService {
 
     Cliente cadastrar(ClienteModel model);
 
-    Cliente alterar(UUID id, ClienteModel model);
-
     Cliente remover(UUID id);
 }
