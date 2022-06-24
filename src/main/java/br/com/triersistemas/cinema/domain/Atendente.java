@@ -12,7 +12,7 @@ public class Atendente extends PessoaFisica {
         this.promocaoDia = StringUtils.getRandomMovie();
     }
 
-    public Atendente(final String nome, final LocalDate aniver, final String cpf) {
+    public Atendente(final String nome, final LocalDate aniver) {
         super(nome, aniver);
         this.promocaoDia = StringUtils.getRandomMovie();
     }

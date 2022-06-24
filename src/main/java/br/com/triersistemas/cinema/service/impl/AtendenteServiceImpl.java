@@ -29,7 +29,7 @@ public class AtendenteServiceImpl implements AtendenteService {
 
     @Override
     public Atendente cadastrar(AtendenteModel model) {
-        Atendente farmaceutico = new Atendente(model.getNome(), model.getAniver(), model.getCpf());
+        Atendente farmaceutico = new Atendente(model.getNome(), model.getAniver());
         farmaceuticoRepository.cadastrar(farmaceutico);
         return farmaceutico;
     }
