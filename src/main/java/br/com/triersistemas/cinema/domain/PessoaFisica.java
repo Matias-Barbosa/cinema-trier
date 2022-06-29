@@ -6,43 +6,15 @@ import java.time.LocalDate;
 import java.util.List;
 
 public abstract class PessoaFisica extends Pessoa {
-
-    private String cpf;
-
     protected PessoaFisica() {
-        this.cpf = this.geraCpf(super.geraDocumento(9));
     }
 
     protected PessoaFisica(final String nome, final LocalDate aniver) {
         super(nome, aniver);
     }
 
-    public PessoaFisica editar(final String nome, final LocalDate aniver, final String cpf) {
+    public PessoaFisica editar(final String nome, final LocalDate aniver) {
         super.editar(nome, aniver);
-        this.cpf = cpf;
         return this;
-    }
-
-    public String geraCpf(final List<Integer> digitos) {
-        digitos.add(this.mod11(digitos, 1, 2, 3, 4, 5, 6, 7, 8, 9));
-        digitos.add(this.mod11(digitos, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
-        return StringUtils.listToString(digitos);
-    }
-
-    @Override
-    public Boolean getDocumentoValido() {
-        var documento = StringUtils.toListInteger(this.cpf);
-        if (documento.size() == 11 && documento.stream().distinct().count() > 1) {
-            return geraCpf(documento.subList(0, 9)).equals(this.cpf);
-        }
-        return false;
-    }
-
-    @Override
-    public String getDocumento() {
-        if (cpf.length() == 11) {
-            return cpf.replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})", "$1.$2.$3-$4");
-        }
-        return cpf;
     }
 }

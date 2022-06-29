@@ -9,5 +9,4 @@ public class CinemaModel {
 
     private String nome;
     private LocalDate aniver;
-    private String cnpj;
 }

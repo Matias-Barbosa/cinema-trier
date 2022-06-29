@@ -13,8 +13,8 @@ public class Cinema extends PessoaJuridica {
         this.filmes = StringUtils.getMovieList();
     }
 
-    public Cinema(final String nome, final LocalDate aniver, final String cnpj) {
-        super(nome, aniver, cnpj);
+    public Cinema(final String nome, final LocalDate aniver) {
+        super(nome, aniver);
         this.filmes = StringUtils.getMovieList();
     }
 

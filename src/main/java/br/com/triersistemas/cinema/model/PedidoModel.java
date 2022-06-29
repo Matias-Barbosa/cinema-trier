@@ -7,6 +7,6 @@ import java.util.UUID;
 @Getter
 public class PedidoModel {
 
-    private UUID idFarmaceutico;
+    private UUID idAtendente;
     private UUID idCliente;
 }

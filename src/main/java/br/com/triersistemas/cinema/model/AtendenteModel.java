@@ -7,5 +7,4 @@ import java.time.LocalDate;
 public class AtendenteModel {
     private String nome;
     private LocalDate aniver;
-    private String cpf;
 }

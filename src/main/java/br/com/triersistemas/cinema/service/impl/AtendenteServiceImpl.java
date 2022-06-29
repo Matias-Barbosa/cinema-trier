@@ -15,42 +15,42 @@ import java.util.UUID;
 public class AtendenteServiceImpl implements AtendenteService {
 
     @Autowired
-    private AtendenteRepository farmaceuticoRepository;
+    private AtendenteRepository atendenteRepository;
 
     @Override
     public List<Atendente> consultar() {
-        return farmaceuticoRepository.consultar();
+        return atendenteRepository.consultar();
     }
 
     @Override
     public Atendente consultar(UUID id) {
-        return farmaceuticoRepository.consultar(id).orElseThrow(NaoExisteException::new);
+        return atendenteRepository.consultar(id).orElseThrow(NaoExisteException::new);
     }
 
     @Override
     public Atendente cadastrar(AtendenteModel model) {
-        Atendente farmaceutico = new Atendente(model.getNome(), model.getAniver());
-        farmaceuticoRepository.cadastrar(farmaceutico);
-        return farmaceutico;
+        Atendente atendente = new Atendente(model.getNome(), model.getAniver());
+        atendenteRepository.cadastrar(atendente);
+        return atendente;
     }
 
     @Override
     public Atendente cadastrarRandom() {
-        Atendente farmaceutico = new Atendente();
-        farmaceuticoRepository.cadastrar(farmaceutico);
-        return farmaceutico;
+        Atendente atendente = new Atendente();
+        atendenteRepository.cadastrar(atendente);
+        return atendente;
     }
 
     @Override
     public Atendente alterar(UUID id, AtendenteModel model) {
-        var farmaceutico = this.consultar(id);
-        return (Atendente) farmaceutico.editar(model.getNome(), model.getAniver(), model.getCpf());
+        var atendente = this.consultar(id);
+        return (Atendente) atendente.editar(model.getNome(), model.getAniver());
     }
 
     @Override
     public Atendente remover(UUID id) {
-        Atendente farmaceutico = this.consultar(id);
-        farmaceuticoRepository.remover(farmaceutico);
-        return farmaceutico;
+        Atendente atendente = this.consultar(id);
+        atendenteRepository.remover(atendente);
+        return atendente;
     }
 }

@@ -50,34 +50,4 @@ public abstract class Pessoa {
     public Long getIdade() {
         return Objects.nonNull(this.aniver) ? ChronoUnit.YEARS.between(this.aniver, LocalDate.now()) : 0L;
     }
-
-    public abstract String getDocumento();
-
-    public abstract Boolean getDocumentoValido();
-
-    protected List<Integer> geraDocumento(final int tamanho) {
-        var rd = new SplittableRandom();
-        List<Integer> digitos = new ArrayList<>();
-        for (int i = 0; i < tamanho; i++) {
-            digitos.add(rd.nextInt(0, 10));
-        }
-        return digitos;
-    }
-
-    protected int mod11(final List<Integer> digitos, final int... multiplicadores) {
-        /*
-        int soma = 0;
-        for (int i = 0; i < multiplicadores.length; i++) {
-            soma += digitos.get(i) * multiplicadores[i];
-        }
-        int resto = soma % 11;
-        return resto > 9 ? 0 : resto;
-        */
-        final AtomicInteger i = new AtomicInteger(0);
-        int resto = digitos.stream()
-                .reduce(0, (p, e) -> p + e * multiplicadores[i.getAndIncrement()]) % 11;
-        return resto > 9 ? 0 : resto;
-    }
-
-
 }

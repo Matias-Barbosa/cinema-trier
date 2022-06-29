@@ -29,9 +29,9 @@ public class CinemaServiceImpl implements CinemaService {
 
     @Override
     public Cinema cadastrar(CinemaModel model) {
-        Cinema fornecedor = new Cinema(model.getNome(), model.getAniver(), model.getCnpj());
-        cinemaRepository.cadastrar(fornecedor);
-        return fornecedor;
+        Cinema cinema = new Cinema(model.getNome(), model.getAniver());
+        cinemaRepository.cadastrar(cinema);
+        return cinema;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class CinemaServiceImpl implements CinemaService {
     @Override
     public Cinema alterar(UUID id, CinemaModel model) {
         var cinema = this.consultar(id);
-        return (Cinema) cinema.editar(model.getNome(), model.getAniver(), model.getCnpj());
+        return (Cinema) cinema.editar(model.getNome(), model.getAniver());
     }
 
     @Override

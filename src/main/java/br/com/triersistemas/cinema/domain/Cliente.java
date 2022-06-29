@@ -12,8 +12,8 @@ public class Cliente extends PessoaFisica {
         super(nome, aniver);
     }
 
-    public Cliente editar(final String nome, final LocalDate aniver, final String cpf) {
-        super.editar(nome, aniver, cpf);
+    public Cliente editar(final String nome, final LocalDate aniver) {
+        super.editar(nome, aniver);
         return this;
     }
 }

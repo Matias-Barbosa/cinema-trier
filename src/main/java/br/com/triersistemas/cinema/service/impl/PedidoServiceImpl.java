@@ -46,7 +46,7 @@ public class PedidoServiceImpl implements PedidoService {
 
     @Override
     public Pedido cadastrar(PedidoModel model) {
-        Atendente atendente = atendenteService.consultar(model.getIdFarmaceutico());
+        Atendente atendente = atendenteService.consultar(model.getIdAtendente());
         Cliente cliente = clienteService.consultar(model.getIdCliente());
         Pedido pedido = new Pedido(atendente, cliente);
         pedidoRepository.cadastrar(pedido);
@@ -56,7 +56,7 @@ public class PedidoServiceImpl implements PedidoService {
     @Override
     public Pedido adicionarIngresso(UUID id, AdicionarIngressoModel model) {
         Pedido pedido = this.consultar(id);
-        List<Ingresso> ingressos = IngressoService.consultar(model.getIdProdutos());
+        List<Ingresso> ingressos = IngressoService.consultar(model.getIdIngresso());
         return pedido.adicionarIngresso(ingressos);
     }
 
