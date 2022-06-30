@@ -1,6 +1,5 @@
 package br.com.triersistemas.cinema.controller;
 
-import br.com.triersistemas.cinema.domain.Atendente;
 import br.com.triersistemas.cinema.domain.Pedido;
 import br.com.triersistemas.cinema.model.AdicionarIngressoModel;
 import br.com.triersistemas.cinema.model.PagarPedidoModel;
@@ -43,4 +42,5 @@ public class PedidoController {
     public Pedido remover(@PathVariable UUID id) {
         return pedidoService.remover(id);
     }
+
 }

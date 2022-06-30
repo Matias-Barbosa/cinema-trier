@@ -3,6 +3,7 @@ package br.com.triersistemas.cinema.domain;
 import br.com.triersistemas.cinema.enuns.EnumStatusPedido;
 import lombok.Getter;
 
+import java.io.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -21,7 +22,6 @@ public class Pedido {
     private BigDecimal troco;
     private final LocalDateTime dataEmissao;
     private LocalDateTime dataPagamento;
-    private LocalDateTime dataCancelamento;
     private EnumStatusPedido status;
 
     public Pedido(final Atendente atendente, final Cliente cliente) {

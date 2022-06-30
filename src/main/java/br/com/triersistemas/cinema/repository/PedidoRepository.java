@@ -5,5 +5,4 @@ import br.com.triersistemas.cinema.domain.Pedido;
 
 import java.util.UUID;
 
-public interface PedidoRepository extends BaseRepository<UUID, Pedido> {
-}
+public interface PedidoRepository extends BaseRepository<UUID, Pedido> {}
