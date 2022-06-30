@@ -14,7 +14,7 @@ public interface AtendenteService {
 
     Atendente cadastrar(AtendenteModel model);
 
-    Atendente cadastrarRandom();
+    //Atendente cadastrarRandom();
 
     Atendente alterar(UUID id, AtendenteModel model);
 

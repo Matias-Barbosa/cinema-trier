@@ -34,12 +34,12 @@ public class AtendenteServiceImpl implements AtendenteService {
         return atendente;
     }
 
-    @Override
+    /*@Override
     public Atendente cadastrarRandom() {
         Atendente atendente = new Atendente();
         atendenteRepository.cadastrar(atendente);
         return atendente;
-    }
+    }*/
 
     @Override
     public Atendente alterar(UUID id, AtendenteModel model) {

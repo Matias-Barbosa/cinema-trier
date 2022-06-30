@@ -13,7 +13,7 @@ import java.util.UUID;
 public class Pedido {
 
     private final UUID id;
-    private Atendente farmaceutico;
+    private Atendente atendente;
     private Cliente cliente;
     private List<Ingresso> ingresso;
     private BigDecimal valor;
@@ -24,9 +24,9 @@ public class Pedido {
     private LocalDateTime dataCancelamento;
     private EnumStatusPedido status;
 
-    public Pedido(final Atendente farmaceutico, final Cliente cliente) {
+    public Pedido(final Atendente atendente, final Cliente cliente) {
         this.id = UUID.randomUUID();
-        this.farmaceutico = farmaceutico;
+        this.atendente = atendente;
         this.cliente = cliente;
         this.ingresso = new ArrayList<>();
         this.valor = BigDecimal.ZERO;

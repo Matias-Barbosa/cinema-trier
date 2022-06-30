@@ -1,5 +1,6 @@
 package br.com.triersistemas.cinema.controller;
 
+import br.com.triersistemas.cinema.domain.Atendente;
 import br.com.triersistemas.cinema.domain.Pedido;
 import br.com.triersistemas.cinema.model.AdicionarIngressoModel;
 import br.com.triersistemas.cinema.model.PagarPedidoModel;
@@ -36,5 +37,10 @@ public class PedidoController {
     @PutMapping("/pagar/{id}")
     public Pedido pagar(@PathVariable UUID id, @RequestBody PagarPedidoModel model) {
         return pedidoService.pagar(id, model);
+    }
+
+    @DeleteMapping("/remover/{id}")
+    public Pedido remover(@PathVariable UUID id) {
+        return pedidoService.remover(id);
     }
 }

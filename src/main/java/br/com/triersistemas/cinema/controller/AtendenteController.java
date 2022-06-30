@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/Atendente")
+@RequestMapping("/atendente")
 public class AtendenteController {
 
     @Autowired
@@ -21,10 +21,10 @@ public class AtendenteController {
         return atendenteService.consultar();
     }
 
-    @PostMapping("/cadastrar-random")
+    /*@PostMapping("/cadastrar-random")
     public Atendente cadastrarRandom() {
         return atendenteService.cadastrarRandom();
-    }
+    }*/
 
     @PostMapping("/cadastrar")
     public Atendente cadastrar(@RequestBody AtendenteModel model) {

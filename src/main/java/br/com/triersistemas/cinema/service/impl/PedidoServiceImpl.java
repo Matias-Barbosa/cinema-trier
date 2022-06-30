@@ -66,4 +66,11 @@ public class PedidoServiceImpl implements PedidoService {
         pedido.pagar(model.getValor());
         return pedido;
     }
+
+    @Override
+    public Pedido remover(UUID id) {
+        Pedido pedido = this.consultar(id);
+        pedidoRepository.remover(pedido);
+        return pedido;
+    }
 }

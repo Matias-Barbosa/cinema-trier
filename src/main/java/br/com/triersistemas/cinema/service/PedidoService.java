@@ -1,5 +1,6 @@
 package br.com.triersistemas.cinema.service;
 
+import br.com.triersistemas.cinema.domain.Atendente;
 import br.com.triersistemas.cinema.domain.Pedido;
 import br.com.triersistemas.cinema.model.AdicionarIngressoModel;
 import br.com.triersistemas.cinema.model.PagarPedidoModel;
@@ -17,4 +18,6 @@ public interface PedidoService {
     Pedido adicionarIngresso(UUID id, AdicionarIngressoModel model);
 
     Pedido pagar(UUID id, PagarPedidoModel model);
+
+    Pedido remover(UUID id);
 }
