@@ -32,6 +32,9 @@ public class PedidoServiceImpl implements PedidoService {
     private ClienteService clienteService;
 
     @Autowired
+    private ClienteServiceImpl clienteServiceImpl;
+
+    @Autowired
     private br.com.triersistemas.cinema.service.IngressoService IngressoService;
 
     @Override
@@ -47,7 +50,7 @@ public class PedidoServiceImpl implements PedidoService {
     @Override
     public Pedido cadastrar(PedidoModel model) {
         Atendente atendente = atendenteService.consultar(model.getIdAtendente());
-        Cliente cliente = clienteService.consultar(model.getIdCliente());
+        Cliente cliente = clienteServiceImpl.consultarCliente(model.getIdCliente());
         Pedido pedido = new Pedido(atendente, cliente);
         pedidoRepository.cadastrar(pedido);
         return pedido;
