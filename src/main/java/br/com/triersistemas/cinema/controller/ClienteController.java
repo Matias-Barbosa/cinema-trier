@@ -1,6 +1,8 @@
 package br.com.triersistemas.cinema.controller;
 
+import br.com.triersistemas.cinema.domain.Atendente;
 import br.com.triersistemas.cinema.domain.Cliente;
+import br.com.triersistemas.cinema.model.AtendenteModel;
 import br.com.triersistemas.cinema.model.ClienteModel;
 import br.com.triersistemas.cinema.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +31,10 @@ public class ClienteController {
     @DeleteMapping("/remover/{id}")
     public Cliente remover(@PathVariable UUID id) {
         return clienteService.remover(id);
+    }
+
+    @PutMapping("/alterar/{id}")
+    public Cliente alterar(@PathVariable UUID id, @RequestBody ClienteModel model) {
+        return clienteService.alterar(id, model);
     }
 }

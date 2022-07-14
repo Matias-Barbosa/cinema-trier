@@ -1,7 +1,9 @@
 package br.com.triersistemas.cinema.service.impl;
 
+import br.com.triersistemas.cinema.domain.Atendente;
 import br.com.triersistemas.cinema.domain.Cliente;
 import br.com.triersistemas.cinema.exceptions.NaoExisteException;
+import br.com.triersistemas.cinema.model.AtendenteModel;
 import br.com.triersistemas.cinema.model.ClienteModel;
 import br.com.triersistemas.cinema.repository.ClienteRepository;
 import br.com.triersistemas.cinema.service.ClienteService;
@@ -39,5 +41,11 @@ public class ClienteServiceImpl implements ClienteService {
         Cliente cliente = this.consultar(id);
         clienteRepository.remover(cliente);
         return cliente;
+    }
+
+    @Override
+    public Cliente alterar(UUID id, ClienteModel model) {
+        var cliente = this.consultar(id);
+        return (Cliente) cliente.editar(model.getNome(), model.getAniver());
     }
 }

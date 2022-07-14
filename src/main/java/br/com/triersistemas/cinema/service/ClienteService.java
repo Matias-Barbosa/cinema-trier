@@ -1,6 +1,8 @@
 package br.com.triersistemas.cinema.service;
 
+import br.com.triersistemas.cinema.domain.Atendente;
 import br.com.triersistemas.cinema.domain.Cliente;
+import br.com.triersistemas.cinema.model.AtendenteModel;
 import br.com.triersistemas.cinema.model.ClienteModel;
 
 import java.util.List;
@@ -15,4 +17,6 @@ public interface ClienteService {
     Cliente cadastrar(ClienteModel model);
 
     Cliente remover(UUID id);
+
+    Cliente alterar(UUID id, ClienteModel model);
 }
